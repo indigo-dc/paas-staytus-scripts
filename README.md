@@ -25,7 +25,7 @@ usage: paas-staytus-health [-h] --conf-file CONF_FILE
 paas-staytus-health: error: the following arguments are required: --conf-file
 ````
 
-As starting point, you can use the configuration file `config.ini` installed with the package:
+As starting point, you can use the configuration file `config.ini` installed with the package, completing the empty fields (all of them are mandatory):
 
 ````
 $ cat /usr/local/etc/paas-staytus-scripts/config.ini
