@@ -15,6 +15,8 @@ class StaytusClient:
     staytus_url = self.url + "/api/v1/issues/all"
  
     response = requests.get(staytus_url, headers=headers)
+
+    response.raise_for_status()
  
     issues = response.json()['data']
  
@@ -38,6 +40,7 @@ class StaytusClient:
     }
  
     response = requests.post(staytus_url, json=payload, headers=headers)
+    response.raise_for_status()
 
   def update_issue(self, issue_id, service_status):
     headers = { 'X-Auth-Token': '%s' % self.token, 'X-Auth-Secret': '%s' % self.secret, 'Content-Type': 'application/json' }
@@ -53,4 +56,4 @@ class StaytusClient:
     }
  
     response = requests.post(staytus_url, json=payload, headers=headers)
-  
+    response.raise_for_status()
